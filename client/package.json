@@ -19,6 +19,7 @@
     "react-slick": "^0.29.0",
     "sass": "^1.64.2",
     "slick-carousel": "^1.8.1",
+    "stream": "^0.0.2",
     "web-vitals": "^2.1.4",
     "wowjs": "^1.1.3"
   },

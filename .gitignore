@@ -36,5 +36,3 @@ client/.next/cache/webpack/server-development/index.pack.old
 client/.next/server/pages-manifest.json
 client/.next/static/chunks/webpack.js
 client/.next/server/pages/login.js
-server/node_modules
-client/node_modules

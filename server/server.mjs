@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import mongoose, { connect } from "mongoose";
 import ventScedRoute from "./routes/api/ventsched.js";
 import ventDataRoute from "./routes/api/ventdata.js";
 import buildingRoute from "./routes/api/BuildingRouting.js";
@@ -14,8 +14,18 @@ import 'dotenv/config';
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["POST","GET"],
+        credentials:true
+    }
+
+));
+
 app.use(express.json());
+
+mongoose.connect('mongodb+srv://testAdmin:Project@2023@cluster0.xfuh1g6.mongodb.net/test?retryWrites=true&w=majority');
 
 //generic route for testing if server is live
 app.get('/', (req,res)=>{

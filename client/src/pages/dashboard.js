@@ -276,8 +276,6 @@ const handleSubmits = async (e) => {
               {/* <td>{room.vents}</td> */}
 
               <td> <button onClick={(e)=>{const id =e.target.parentElement.parentElement.id; console.log(id) ; deleteRoom(id)}} > Delete Room</button></td>
-              <div id={room.vents}>
-                    <button onClick={(e)=>{const id =e.target.parentElement.id; console.log(id) ; fetchAllVents(id) ; handleClick}}>Toggle Data</button>                         </div>
             </tr>
           )
         )}

@@ -54,7 +54,7 @@ function MysideNav() {
       const fetchAllVents=async (id)=>{
       
         try {
-          const response = await axios.get(`https://smart-vents.onrender.com/vents/${id}`);
+          const response = await axios.get(`https://smart-vents-api.onrender.com/vents/${id}`);
           const data = response.data;
           setVent(data);
           console.log(vent)
@@ -72,7 +72,7 @@ function MysideNav() {
 useEffect(() => {
   const fetchRoomData = async () => {
     try {
-      const response = await axios.get('https://smart-vents.onrender.com/rooms');
+      const response = await axios.get('https://smart-vents-api.onrender.com/rooms');
       const data = response.data;
       setRoomData(data);
     } catch (error) {
@@ -88,7 +88,7 @@ const handleSubmit = async (event) => {
   event.preventDefault();
 
   try {
-    const response = await axios.post('https://smart-vents.onrender.com/rooms', 
+    const response = await axios.post('https://smart-vents-api.onrender.com/rooms', 
       {name:name, building : building , floor:floor}
     );
     console.log(response.data);

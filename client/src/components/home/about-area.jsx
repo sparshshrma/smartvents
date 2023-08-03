@@ -9,18 +9,17 @@ const about_content = {
   ],
   subtitle: "About Us",
   title: "Why Smart Vent?",
-  description: <>Our flood vent door is engineered to remain latched until water is present. During a flood, rising water activates internal floats, opening the door. Smart Vent’s 3-inch clearance allows most flood debris to pass through, unlike typical air vents, which clog.</>,
+  description: <>Our Vent management system will give you one touch access to your vents. By having this all the data of your vents will be available to your phone with magnificient technology and 24/7 customer support.</>,
 
   title_1: "RESIDENTIAL",
   title_2: "COMMERCIAL",
-  des_1: "Enclosed areas are permitted under elevated buildings if they meet use and construction requirements.",
-  des_2: "Elevation and wet floodproofing techniques are the suggested form of building compliance.",
-  avata: "/assets/img/about/ab-small3.png",
-  name: "Andrew",
+  des_1: "Better scheduling and understanding of information of vents of all rooms in your house.",
+  des_2: "Easy to manage the vent scheduling of the places hard to reach and getting their information as well.",
+  name: "Moustapha Mohammad",
   job_title: "Head Of Idea",
 
 }
-const { images, subtitle, title, description, title_1, title_2, des_1, des_2, avata, name, job_title } = about_content
+const { images, subtitle, title, description, title_1, title_2, des_1, des_2, name, job_title } = about_content
 
 
 const AboutArea = () => {
@@ -79,7 +78,6 @@ const AboutArea = () => {
                     </Link>
                   </div>
                   <div className="about-signature d-flex align-items-center mb-10">
-                    <img src={avata} alt="theme-pure" />
                     <div className="ab-meta-content ml-15">
                       <h6 className="m-0 ab-meta-title">{name}</h6>
                       <span className="ab-meta-subtitle">{job_title}</span>

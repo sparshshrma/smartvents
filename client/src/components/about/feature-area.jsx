@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 const feture_content = {
     bg_img: "/assets/img/about/banner-10.jpg",
     title: "Industry Explicit Competence",
-    info: <>2014 only 3 countries host 50% of the globally <br /> installed.</>,
-    job_info: <>Mikdon S. Simbo <span>-Head Of Idea</span></>,
+    info: <>We came up with the idea so that you have smart ecosystem in your house. <br /> installed.</>,
+    job_info: <>Moustapha Mohammad <span>-Head Of Idea</span></>,
     fetures: [
-        "New Business Ideas create",
-        "Grow corporate financial",
-        "Smart Security System",
+        "fastest connectivity",
+        "multi user interface",
+        "Ease of Use",
         "24/7 Online Support",
     ]
 }

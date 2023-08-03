@@ -3,16 +3,17 @@ import React from 'react';
 
 const footer_content = {
    about: "About Us",
-   about_des: <>Our flood vent door is engineered to remain latched until water is present. During a flood, rising water activates internal floats, opening the door. Smart Vent’s 3-inch clearance allows most flood debris to pass through, unlike typical air vents, which clog.</>,
+   about_des: <>Our Vent management system will give you one touch access to your vents. By having this all the data of your vents will be available to your phone with magnificient technology and 24/7 customer support..</>,
    get_in_touch: "Get In Touch",
-   location: <>27 Division St, Ontario, <br /> Ontario 10002, CA</>,
+   location: <>1301 - 16 Avenue NW<br />  Calgary AB T2M 0L4, CA</>,
    office_time: <>Mon – Fri: 7.00 – 22.00 <br /> St – Sun: 9.00 – 20.00</>,
    phone: <>+1 800 123 456 789 <br /> +1 800 987 654 321</>,
    pages_title: "Main Pages",
    pages: [
       { title: "About Us", link: "/about" },
-      { title: "Terms", link: "#" },
-      { title: "Privacy", link: "#" },
+      { title: "contact", link: "/contact" },
+      { title: "Login", link: "/login" },
+      { title: "Sign Up", link: "register" },
 
 
    ]
@@ -88,12 +89,6 @@ const Footer = ({ style_2 }) => {
                         </div>
                      </div>
                      <div className="col-xl-5 col-lg-5 text-lg-end col-12 text-center ">
-                        <div className="footer-menu">
-                           <ul>
-                              <li><a href="#">Privacy Policy</a></li>
-                              <li><a href="#">Terms of Use</a></li>
-                           </ul>
-                        </div>
                      </div>
                   </div>
                </div>

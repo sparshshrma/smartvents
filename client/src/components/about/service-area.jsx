@@ -17,8 +17,8 @@ const service_data = [
     {
         id: 3,
         icon: "flaticon-settings",
-        title: "Automated Scheduling",
-        description: <> Smart vent services often include the ability to create and manage automated schedules for opening...</>,
+        title: "Ease of Use",
+        description: <> Smart vent services include the simple and attractive interface to display the data in different forms.</>,
     },
     {
         id: 4,

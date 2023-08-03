@@ -4,24 +4,19 @@ import React from 'react';
 
 const feature_data = [
     {
-        id: 1,
-        icon: "flaticon-spy-camera",
-        title: "Temperature and Humidity Sensors"
-    },
-    {
         id: 2,
         icon: "flaticon-secure",
-        title: "Energy Usage Tracking"
+        title: "Precise data"
     },
     {
         id: 3,
         icon: "flaticon-global",
-        title: "Air Quality Monitoring"
+        title: "Fast App connectivity"
     },
     {
         id: 4,
         icon: "flaticon-database",
-        title: "Integration with HVAC System"
+        title: "Fully professional website"
     },
 ]
 

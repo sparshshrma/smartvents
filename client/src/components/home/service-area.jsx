@@ -12,13 +12,13 @@ const service_content = {
          aria_labelledby: "nav-camera-tab",
          img: "/assets/img/services/service1.jpg",
          price: "59",
-         title: "Firmware Updates and Support:",
-         description: <> Smart vent services often provide regular firmware updates to improve system performance and security. They may also offer customer support and troubleshooting assistance.</>,
+         title: "Get your installation done",
+         description: <> Smart vent services provide a technician that will come and install the smart vents professionally in the right place. He will also be taking care of zoning, perfect angle and will also guide you through the app.</>,
          fetures: [
             "Departure of the expert",
             "Configure software",
             "24/7 Support",
-            "Remote Administration",
+            "Perfect Zoning",
             "Special applicationt",
          ]
       },
@@ -30,13 +30,12 @@ const service_content = {
          img: "/assets/img/services/service2.jpg",
          price: "35",
          title: "Firmware Updates and Support: ",
-         description: <>Smart vent services may incorporate weather data to anticipate changes in outdoor temperature and adjust HVAC settings accordingly, ensuring indoor comfort and energy efficiency.</>,
+         description: <>Smart vents application comes with diffenet plans and prices. The most basic one is for residential and small buildings that will give you all these features</>,
          fetures: [
-            "Departure of the expert",
-            "Configure software",
+            "Access to software",
             "24/7 Support",
-            "Remote Administration",
-            "Special applicationt",
+            "Scheduling your vents",
+            "Multi user support",
          ]
       },
       {
@@ -46,31 +45,14 @@ const service_content = {
          aria_labelledby: "nav-security-tab",
          img: "/assets/img/services/service3.jpg",
          price: "45",
-         title: "Weather Integration:",
-         description: <> Smart vent services may incorporate weather data to anticipate changes in outdoor temperature and adjust HVAC settings accordingly, ensuring indoor comfort and energy efficiency.</>,
+         title: "We got Technician",
+         description: <> Smart vent services are also available for big building with more than 4 floors in which we provide our best trained technician to keep your vent up and running all the time.</>,
          fetures: [
-            "Departure of the expert",
-            "Configure software",
+            "Access to software",
             "24/7 Support",
-            "Remote Administration",
-            "Special applicationt",
-         ]
-      },
-      {
-         id: 4,
-         tab_id: "nav-cyber",
-         active: "",
-         aria_labelledby: "nav-cyber-tab",
-         img: "/assets/img/services/service4.jpg",
-         price: "42",
-         title: "Energy Usage Tracking:",
-         description: <> Many smart vent services provide insights into energy consumption, allowing users to monitor how much energy is being used for heating and cooling in different areas of their home.</>,
-         fetures: [
-            "Departure of the expert",
-            "Configure software",
-            "24/7 Support",
-            "Remote Administration",
-            "Special applicationt",
+            "Scheduling your vents",
+            "Multi user support",
+            "On-Site Technician",
          ]
       },
    ]
@@ -94,16 +76,13 @@ const ServiceArea = () => {
                      <nav>
                         <div className="nav tp-service-tab justify-content-center mb-35" id="nav-tab" role="tablist">
                            <button className="nav-links active" id="nav-camera-tab" data-bs-toggle="tab" data-bs-target="#nav-camera"
-                              type="button" role="tab" aria-controls="nav-camera" aria-selected="false">Zoning</button>
+                              type="button" role="tab" aria-controls="nav-camera" aria-selected="false">Installation</button>
 
                            <button className="nav-links" id="nav-cctv-tab" data-bs-toggle="tab" data-bs-target="#nav-cctv"
-                              type="button" role="tab" aria-controls="nav-cctv" aria-selected="false">Firmware</button>
+                              type="button" role="tab" aria-controls="nav-cctv" aria-selected="false">App plans and benefits</button>
 
                            <button className="nav-links" id="nav-security-tab" data-bs-toggle="tab" data-bs-target="#nav-security"
-                              type="button" role="tab" aria-controls="nav-security" aria-selected="false">Weather Integration</button>
-
-                           <button className="nav-links" id="nav-cyber-tab" data-bs-toggle="tab" data-bs-target="#nav-cyber"
-                              type="button" role="tab" aria-controls="nav-cyber" aria-selected="false">Energy Usage Tracking</button>
+                              type="button" role="tab" aria-controls="nav-security" aria-selected="false">On-site Technician</button>
                         </div>
                      </nav>
                      <div className="tab-content" id="nav-tabContent">

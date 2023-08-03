@@ -10,10 +10,10 @@ const about_content = {
     about: "About Us",
     about_title: " Magtnificient Quality Gives You an Edge",
     post_img: "/assets/img/about/ab-meta.jpg",
-    post: <>In 2014 only 3 countries host 50% of the globally installed bandwidth potential.</>,
-    author: <><b>Alonso D. Dowson</b> <i>-Head Of Idea</i></>,
-    fetoure_1: "New Business Ideas create",
-    fetoure_2: "Grow corporate financial system",
+    post: <>We came up with the idea so that you have smart ecosystem in your house.</>,
+    author: <><b>Moustapha Mohammad</b> <i>-Head Of Idea</i></>,
+    fetoure_1: "Smart vents connected to your phone",
+    fetoure_2: "Easy and simple to use",
 
 
 }

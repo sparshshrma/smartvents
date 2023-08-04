@@ -102,7 +102,7 @@ const handleSubmit = async (event) => {
 //Deleting the room
 async function deleteRoom(id) {
   try {
-    const response = await axios.delete(`http://localhost:4000/rooms/${id}`);
+    const response = await axios.delete(`https://smart-vents-api.onrender.com/rooms/${id}`);
     console.log(response.data);
     // Handle success
   } catch (error) {
@@ -117,7 +117,7 @@ const handleSubmits = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:4000/buildingsNew', {
+    const response = await fetch('https://smart-vents-api.onrender.com/buildingsNew', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -145,7 +145,7 @@ const handleSubmits = async (e) => {
 //Deleting the building
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/buildings/${id}`);
+      await axios.delete(`https://smart-vents-api.onrender.com/buildings/${id}`);
       const updatedBuildings = buildingData.filter((building) => building._id !== id);
       setBuildingData(updatedBuildings);
     } catch (error) {
@@ -157,7 +157,7 @@ const handleSubmits = async (e) => {
   useEffect(() => {
     const fetchBuildingData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/buildings');
+        const response = await axios.get('https://smart-vents-api.onrender.com/buildings');
         const data = response.data;
         setBuildingData(data);
 

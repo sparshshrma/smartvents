@@ -17,7 +17,7 @@ const app = express();
 app.use(cors(
     {
         origin: ["https://smart-vents.vercel.app"],
-        methods: ["POST", "GET"],
+        methods: ["POST", "GET", "DELETE", "HEAD", "PATCH", "PUT"],
         credentials: true
     }
 ));

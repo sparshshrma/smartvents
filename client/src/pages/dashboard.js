@@ -143,15 +143,15 @@ const handleSubmits = async (e) => {
 
 
 //Deleting the building
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`https://smart-vents-api.onrender.com/buildings/${id}`);
-      const updatedBuildings = buildingData.filter((building) => building._id !== id);
-      setBuildingData(updatedBuildings);
-    } catch (error) {
-      console.error('Error deleting building:', error);
-    }
-  };
+const handleDelete = async (id) => {
+  try {
+    await axios.delete(`https://smart-vents-api.onrender.com/buildings/${id}`);
+    const updatedBuildings = buildingData.filter((building) => building._id !== id);
+    setBuildingData(updatedBuildings);
+  } catch (error) {
+    console.error('Error deleting building:', error);
+  }
+};
 
   //Getting the building data
   useEffect(() => {
@@ -237,7 +237,6 @@ const handleSubmits = async (e) => {
 
 
         </div>; // Replace with your actual component for Building Page
-
 
 
       case 'viewroom':

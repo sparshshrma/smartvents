@@ -1,78 +1,45 @@
-.siteNavigation {
-  background-color: #0d98ba;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1px 20px;
-  height: 70px;
-  margin-left: 15%;
-  margin-right: 5%;
-  border-radius: 10px;
-}
-
-
-
-
-
-.dashdiv{
-align-items: center;
-margin-left: 50%;
-margin-right: 50%;
-margin-top: 300px;
-font-size: 200;
-font-weight: bold;
-height: 400px;
-width: 400px;
-}
-
-
-
-
-.graphdiv{
-  align-items: center;
-  margin-left: 50%;
-  margin-right: 50%;
-  margin-top: 300px;
-  font-size: 200;
-  font-weight: bold;
-  }
-
-
-
-
 .body {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
+  /*background-color: whitesmoke;*/
+  background-color: lightgray;
+
 }
+.inputlabelDecor{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.inputDecor{
+  margin-left: 4px;
+}
+.table1{
+ width: 25%;
+  border: 1px solid black;
+  background-color: cadetblue;
 
-
-
-
+  border-radius: 5px;
+  .th{
+    background-color: #191c1c;
+    color: white;
+  }
+  .td{
+   text-align: center;
+  }
+}
 .container {
   background-color: white;
 }
-
-
-
 
 .navItem {
   color: black;
 }
 
-
-
-
-
 .logo{
  margin-left: 40%;
 }
-
-
-
 
 .logoButton {
   border: none;
@@ -84,25 +51,15 @@ width: 400px;
   cursor: pointer;
 }
 
-
-
-
 .menu {
   display: flex;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
 }
-
-
-
-
 .menu a {
   text-decoration: none;
 }
-
-
-
 
 .button {
   color: #080202;
@@ -115,57 +72,160 @@ width: 400px;
   cursor: pointer;
 }
 
-
-
-
 .button:hover {
   color: white;
 }
 
-
-
-
 .container{
   color: #080202;
+
 }
-
-
-
 
 .homediv{
-  height: 300px;
-  width: 500px;
-  margin-left: 20%;
- background-color: lightgray;
+  margin-left: 13%;
 }
 
+/* Apply these styles to your sidebar container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25px; 
+  background-color: #333; 
+  z-index: 1000; 
+}
 
+/* Style for the navigation items */
+.navItem {
+  padding: 10px;
+  color: #fff; /* Set your desired text color */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
+/* Style for the navigation icons */
+.navItem i {
+  margin-right: 10px;
+}
 
+/* Style for the navigation links */
+.navItem a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.sidebar{
-  background-color: #080202;
+/* Style for the logout text */
+.navItem div {
+  cursor: pointer;
+}
+.page-content {
+  margin-left: 250px; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  transition: margin-left 0.3s ease; 
 }
 
 .table {
   width: 200%;
   border-collapse: collapse;
 }
-
 .thead {
-  background-color: #f2f2f2;
+  
+  background:#000;
 }
-
-.th td {
+.th .td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  display:flex;
+  width:100%;
 }
 
-.tr:hover {
-  background-color: #f5f5f5;
+#lineChart {
+  width: 100%;
+}
+.ventdetails {
+  width: 30%;
+  background-color: #a1d6e4;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.welcome{                                 
+  margin-left: 10%;
+  height: 50px;
+  width: 30%;
+  margin-top: 10px;
+}
+/* main content working */
+.maincontent{
+  margin-left: 10%;
 }
 
-.tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+.logo {
+  display: flex;
+  border: none;
+  background:none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #080202;
+  margin-left: 10%;
 }
+
+/* working */
+.logoutButton .link a {
+  margin-left: 500px;
+  background-color: #3c8599;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.logoutButton .link a:hover {
+  background-color: gray;
+}
+
+/* logout link working */
+.logoutButton link{
+  text-decoration: none;
+}
+
+.pageheading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.chartcontainer {
+  height: 600px;
+  margin-bottom: 20px;
+}
+.deviceinfo {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+.deviceinfo h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .maincontent {
+    margin-left: 0;
+  }
+}
+
+

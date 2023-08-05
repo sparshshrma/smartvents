@@ -1,0 +1,217 @@
+.siteNavigation {
+  background-color: #0d98ba;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  height: 70px;
+}
+/* welcome working */
+.welcome{                                 
+  margin-left: 10%;
+  height: 50px;
+  width: 30%;
+  margin-top: 10px;
+}
+/* main content working */
+.maincontent{
+  margin-left: 10%;
+}
+
+.logo {
+  display: flex;
+  border: none;
+  background: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #080202;
+  margin-left: -13%;
+}
+
+/* working */
+.logoutButton .link a {
+  margin-left: 500px;
+  background-color: #3c8599;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.logoutButton .link a:hover {
+  background-color: gray;
+}
+
+/* logout link working */
+.logoutButton link{
+  text-decoration: none;
+}
+
+.header {
+  margin-left: 20%;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.button {
+  color: #080202;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 30px;
+  margin: 0;
+  cursor: pointer;
+}
+/* working button */
+.addButton button{
+  margin-left: 10%;
+  background-color: #3c8599;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.addButton button:hover {
+  background-color: gray;
+}
+
+
+.deleteButton {
+  background-color: #3c8599; 
+  color: #ffffff; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: gray; 
+}
+
+
+/* table1 working */
+
+
+.table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table1 th,
+.table1 td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+.table1 th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.buildinglink{
+  text-decoration: none;
+  color: #080202;
+}
+
+.table1 tr:hover {
+  background-color: #f2f2f2;
+}
+
+.table1 .td-actions {
+  white-space: nowrap;
+}
+
+.tableBlur {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Additional CSS for the scrollable table */
+.tableContainer {
+  max-height: 400px; /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+z-index: 1000; /* Place above other content */
+}
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal form button {
+  background-color: #3c8599;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal form button[type="button"] {
+  background-color: #3c8599;
+  margin-left: 10px;
+}
+
+/* Hide the modal when it's not open */
+.modalBackground.hidden {
+  display: none;
+}
+.tableBlur {
+filter: blur(1px); /* Apply blur effect */
+pointer-events: none; /* Disable interactions with the table */
+}

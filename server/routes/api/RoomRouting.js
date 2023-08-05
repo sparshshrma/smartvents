@@ -1,54 +1,104 @@
 // ROOM ROUTING
+const {ObjectId} = require("mongodb");
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Room = require('../../models/room.js');
-
- 
-
+const Room = require("../../models/room.js");
+const mongoose = require("mongoose");
 // Get all rooms
-router.get('/rooms', async (req, res) => {
+router.get("/rooms", async (req, res) => {
   try {
-    const rooms = await Room.find();
+    const rooms = await Room.aggregate([
+      {
+        $lookup: {
+          from: "buildings", // Name of the 'Floor' collection (lowercase pluralized)
+          localField: "building", // Field from the 'Building' collection
+          foreignField: "_id", // Field from the 'Floor' collection
+          as: "building_details", // Output array field to store the matched floors
+        },
+      },
+      {
+        $unwind: "$building_details",
+      },
+
+    ]);
+    console.log("rooms", rooms);
     res.json(rooms);
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while retrieving the rooms.' });
+    res
+      .status(500)
+      .json({error: "An error occurred while retrieving the rooms."});
   }
 });
 
- 
+router.get("/getroombybuilding/:id", async (req, res) => {
+  try {
+    const rooms = await Room.aggregate([
+      {
+        $match: {building: new ObjectId(req.params.id)},
+      },
+      {
+        $lookup: {
+          from: "buildings", // Name of the 'Floor' collection (lowercase pluralized)
+          localField: "building", // Field from the 'Building' collection
+          foreignField: "_id", // Field from the 'Floor' collection
+          as: "building_details", // Output array field to store the matched floors
+        },
+      },
+      {
+        $unwind: "$building_details",
+      },
+      {
+        $lookup: {
+          from: 'vents',
+          localField: 'vents',
+          foreignField: '_id',
+          as: 'vents'
+        }
+      },
+    ]);
+    // const rooms = await Room.find({ building: req.params.id }).exec();
+    res.json(rooms);
+  } catch (error) {
+    console.log("Error=====", error);
+    res
+      .status(500)
+      .json({error: "An error occurred while retrieving the rooms."});
+  }
+});
 
 // Get a specific room by ID
-router.get('/rooms/:id', async (req, res) => {
+router.get("/rooms/:id", async (req, res) => {
   try {
-    
     const room = await Room.findById(req.params.id);
     if (!room) {
-      return res.status(404).json({ error: 'Room not found.' });
+      return res.status(404).json({error: "Room not found."});
     }
     res.json(room);
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while retrieving the room.' });
+    res
+      .status(500)
+      .json({error: "An error occurred while retrieving the room."});
   }
 });
 
- 
-
 // Create a new room
-router.post('/rooms', async (req, res) => {
+router.post("/rooms", async (req, res) => {
   try {
-    const buildingModel = require('../../models/building.js');
+    const buildingModel = require("../../models/building.js");
     const room = new Room(req.body);
     const buildingObj = await buildingModel.findById(room.building); //changed await
     //validates that the building exists
-    console.log(room,buildingObj); //changed
+    console.log(room, buildingObj); //changed
 
-    if(!buildingObj){
+    if (!buildingObj) {
       throw Error("Building does not exist");
     }
     //validates that the floor that the room is on isn't higher than the the buildings floors
-    if(room.floor>buildingObj.floors){
-      throw Error("Floor is greater than the number of floors that the building has");
+    if (room.floor > buildingObj.floors) {
+      throw Error(
+        "Floor is greater than the number of floors that the building has"
+      );
     }
     //adds rooms to the buildings array
     await room.save();
@@ -56,38 +106,59 @@ router.post('/rooms', async (req, res) => {
     await buildingObj.save();
     res.status(201).json(room);
   } catch (error) {
-    res.status(500).json({ error:'An error occurred while creating the room.' });
+    res
+      .status(500)
+      .json({error: "An error occurred while creating the room."});
   }
 });
 
- 
-
 // Update a room by ID
-router.patch('/rooms/:id', async (req, res) => {
+router.patch("/rooms/:id", async (req, res) => {
   try {
-    const room = await Room.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const room = await Room.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!room) {
-      return res.status(404).json({ error: 'Room not found.' });
+      return res.status(404).json({error: "Room not found."});
     }
     res.json(room);
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while updating the room.' });
+    res
+      .status(500)
+      .json({error: "An error occurred while updating the room."});
   }
 });
-
- 
-
-// Delete a room by ID
-router.delete('/rooms/:id', async (req, res) => {
+router.patch("/room/updateVent/:id", async (req, res) => {
   try {
-    console.log(req.params.id)
+    const updatedVent = await Room.findOneAndUpdate(
+      {'_id': req.params.id}, // Find the document containing the specified ventId in the 'vents' array
+      {$set: req.body}, // Update the specified field with the new value
+      {new: true} // Return the updated document after the update
+    );
+
+    if (!updatedVent) {
+      return res.status(404).json({error: "Room not found."});
+    }
+    res.json(updatedVent);
+  } catch (error) {
+    res
+      .status(500)
+      .json({error: "An error occurred while updating the room."});
+  }
+});
+// Delete a room by ID
+router.delete("/rooms/:id", async (req, res) => {
+  try {
+    console.log(req.params.id);
     const room = await Room.findByIdAndDelete(req.params.id);
     if (!room) {
-      return res.status(404).json({ error: 'Room not found.' });
+      return res.status(404).json({error: "Room not found."});
     }
     res.sendStatus(204);
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred while deleting the room.' });
+    res
+      .status(500)
+      .json({error: "An error occurred while deleting the room."});
   }
 });
 

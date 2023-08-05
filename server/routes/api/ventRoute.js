@@ -13,8 +13,8 @@ try {
   }
 });
 
-app.get("/vents",async (req,res)=>{
-    const vents = await ventModel.find();
+app.get("/vents",async (req,res)=>{ 
+    const vents = await ventModel.find();  
     try{
         res.send(vents);
     }catch(error){
@@ -24,6 +24,7 @@ app.get("/vents",async (req,res)=>{
 
 app.post("/vents", async (req, res) => {
     const roomModel = require('../../models/room.js');
+    console.log("closeModal=====>",req.body)
     const vent = new ventModel(req.body);
    // const roomObj = await roomModel.findById(vent.room);
     
@@ -36,8 +37,10 @@ app.post("/vents", async (req, res) => {
      // roomObj.vents.push(vent._id);
       await vent.save();
    //   await roomObj.save();
+      console.log("vent=====>",vent)
       res.send(vent);
     } catch (error) {
+      console.log("error=====>",error);
       res.status(500).send({ error: 'An error occurred while adding the vent' });
     }
   });
@@ -51,9 +54,10 @@ app.patch("/vents/:id", async (req,res)=>{
     }
 });
 
-app.delete("/vents/:id", async (req, res) => {
+app.delete("/vents", async (req, res) => {
     try {
-      const vent = await findByIdAndDelete(req.params.id);
+      console.log(req.body.id);
+      const vent = await findByIdAndDelete(req.body.id);
   
       if (!vent) {
         res.status(404).send("No vent found");
@@ -64,6 +68,6 @@ app.delete("/vents/:id", async (req, res) => {
     } catch (error) {
       res.status(500).send({ error: 'An error occurred while deleting the vent' });
     }
-  });
+  });      
 
 module.exports = app;

@@ -19,7 +19,7 @@ const RegisterComponent = () => {
     try {
       console.log(email, password);
       axios
-        .post("http://localhost:4000/user", {
+        .post("https://smart-vents-api.onrender.com/user", {
           username: username,
           firstName: firstName,
           lastName: lastName,

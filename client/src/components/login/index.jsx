@@ -23,7 +23,7 @@ const LoginComponent = () => {
       try {
         console.log(email, password);
         axios
-          .post("http://localhost:4000/login", {
+          .post("https://smart-vents-api.onrender.com/login", {
             email: email,
             password: password,
           })

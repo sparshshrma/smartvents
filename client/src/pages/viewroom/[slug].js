@@ -11,7 +11,7 @@ import MysideNav from "../../components/sideNav";
 import {useRouter} from "next/router";
 import AddVentsForm from "./addVentsForm";
 
-function ViewRoom() {
+function ViewRoom(props) {
   const router = useRouter();
   const [selectedPage, setSelectedPage] = useState("uservents");
   const [roomData, setRoomData] = useState([]);

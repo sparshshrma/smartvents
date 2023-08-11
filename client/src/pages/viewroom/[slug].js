@@ -20,12 +20,20 @@ function ViewRoom(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [updateRoomID, setUpdateRoomId] = useState(false);
   const [username, setUsername] = useState("");
+  const [isRoomModalOpen, setIsRoomModalOpen] = useState(false);
   //update
   const openModal = (id) => {
     setIsModalOpen(true);
     setUpdateRoomId(id)
   };
 
+  const openRoomModal = () => {
+    setIsRoomModalOpen(true);
+  };
+
+  const closeRoomModal = () => {
+    setIsRoomModalOpen(false);
+  };
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -156,8 +164,8 @@ function ViewRoom(props) {
           <div className={styles.maincontent}>
           {props.isfrom !== 'dashboard' &&
                 <div>
-                <div className={styles.addButton}><button onClick={openModal}>Add Room</button></div>
-                  {isModalOpen && (
+                <div className={styles.addButton}><button onClick={openRoomModal}>Add Room</button></div>
+                  {isRoomModalOpen && (
               <div className={styles.modalBackground}>
               <div className={styles.modal}>
           <form onSubmit={handleSubmit}>
@@ -180,7 +188,7 @@ function ViewRoom(props) {
             </label>
             <br/>
             <button type="submit">Add Vent</button>
-            <button type="button" onClick={closeModal}>Cancel</button>
+            <button type="button" onClick={closeRoomModal}>Cancel</button>
                       </form>   
                     </div>
                   </div>

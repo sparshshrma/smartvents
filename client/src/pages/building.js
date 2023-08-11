@@ -135,7 +135,7 @@ export default function Building(props) {
           <div className={styles.welcome}>
             <b>Hey, {username?.username}</b>
           </div>
-        <div className={styles.logoutButton}><div className={styles.link}>< Link href="/dashboard">Logout</Link> </div></div>
+        <div className={styles.logoutButton}><div className={styles.link}>< Link href="/login">Logout</Link> </div></div>
         </div>
       </div>
       <div className={styles.body}>

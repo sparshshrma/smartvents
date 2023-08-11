@@ -154,6 +154,42 @@ function ViewRoom() {
       <MysideNav/>
 
           <div className={styles.maincontent}>
+          {props.isfrom !== 'dashboard' &&
+                <div>
+                <div className={styles.addButton}><button onClick={openModal}>Add Room</button></div>
+                  {isModalOpen && (
+              <div className={styles.modalBackground}>
+              <div className={styles.modal}>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Name:
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+            <br/>
+            <label>
+              Floor:
+              <input
+                type="number"
+                value={floor}
+                onChange={(e) => setFloor(e.target.value)}
+              />
+            </label>
+            <br/>
+            <button type="submit">Add Vent</button>
+            <button type="button" onClick={closeModal}>Cancel</button>
+                      </form>   
+                    </div>
+                  </div>
+                )}
+
+                  </div>
+                }
+
+
           <h1>Room Data</h1>
           <div className={styles.table1}>
           <table className={styles.table1}>
@@ -211,31 +247,6 @@ function ViewRoom() {
             </tbody>
           </table>
           </div>
-
-
-          <div className={styles.homediv}>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Name:
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label>
-            <br/>
-            <label>
-              Floor:
-              <input
-                type="number"
-                value={floor}
-                onChange={(e) => setFloor(e.target.value)}
-              />
-            </label>
-            <br/>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
 
         </div>
 

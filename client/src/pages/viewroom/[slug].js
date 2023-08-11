@@ -212,7 +212,34 @@ function ViewRoom() {
           </table>
           </div>
 
+
+          <div className={styles.homediv}>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Name:
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+            <br/>
+            <label>
+              Floor:
+              <input
+                type="number"
+                value={floor}
+                onChange={(e) => setFloor(e.target.value)}
+              />
+            </label>
+            <br/>
+            <button type="submit">Submit</button>
+          </form>
         </div>
+
+        </div>
+
+
 
        
       </div>
